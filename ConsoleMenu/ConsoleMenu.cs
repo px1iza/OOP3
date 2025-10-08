@@ -10,7 +10,6 @@ namespace ConsoleMenu
         {
             Human[] people = new Human[]
             {
-                // Створюємо студентів з рядковим StudentID
                 new Student("Олександр", "Петренко", 180, 70, "KB123456", new Passport("AB", 987654)),
                 new Student("Марія", "Коваль", 165, 55, "KB789012", new Passport("AC", 345678)),
                 new Librarian("Світлана", "Мельник"),
