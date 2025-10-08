@@ -10,7 +10,7 @@ namespace ConsoleMenu
         {
             Human[] people = new Human[]
             {
-                new Student("Олександр", "Петренко", 180, 70, "KB123456", new Passport("AB", 987654)),
+                new Student("Рабірох", "Єлизавета", 180, 70, "KB123456", new Passport("AB", 987654)),
                 new Student("Марія", "Коваль", 165, 55, "KB789012", new Passport("AC", 345678)),
                 new Librarian("Світлана", "Мельник"),
                 new SoftwareDeveloper("Євген", "Романюк"),
