@@ -1,7 +1,7 @@
-Student ОлександрПетренко
+Student РабірохЄлизавета
 {
-"firstname": "Олександр",
-"lastname": "Петренко",
+"firstname": "Рабірох",
+"lastname": "Єлизавета",
 "height": 180,
 "weight": 70,
 "studentId": "KB123456",

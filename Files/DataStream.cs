@@ -56,33 +56,32 @@ namespace Files
         }
         public int ReadFromFile(string fileName)
         {
-            string fileContent = File.ReadAllText(fileName);
             int count = 0;
-            Regex studentBlockRegex = new Regex(@"Student.*?\{(.*?)\}", RegexOptions.Singleline);
 
-            Regex heightRegex = new Regex(@"""height""\s*:\s*(\d+)");
-            Regex weightRegex = new Regex(@"""weight""\s*:\s*(\d+)");
-
-            MatchCollection studentMatches = studentBlockRegex.Matches(fileContent);
-
-            foreach (Match studentMatch in studentMatches)
+            using (StreamReader reader = new StreamReader(fileName))
             {
-                string blockContent = studentMatch.Groups[1].Value;
+                string line;
+                int height = 0, weight = 0;
 
-                Match heightMatch = heightRegex.Match(blockContent);
-                Match weightMatch = weightRegex.Match(blockContent);
-
-                if (heightMatch.Success && weightMatch.Success)
+                while ((line = reader.ReadLine()) != null)
                 {
-                    int.TryParse(heightMatch.Groups[1].Value, out int height);
-                    int.TryParse(weightMatch.Groups[1].Value, out int weight);
+                    line = line.Trim();
 
-                    if (weight > 0 && height > 0 && weight == height - 110)
+                    if (line.StartsWith("\"height\""))
+                        height = int.Parse(line.Split(':')[1].Trim().TrimEnd(','));
+
+                    else if (line.StartsWith("\"weight\""))
+                        weight = int.Parse(line.Split(':')[1].Trim().TrimEnd(','));
+
+                    if (line == "}")
                     {
-                        count++;
+                        if (weight == height - 110)
+                            count++;
+                        height = weight = 0;
                     }
                 }
             }
+
             return count;
         }
     }
