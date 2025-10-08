@@ -21,11 +21,6 @@ namespace Entities
             Passport = passport;
         }
 
-        public bool HasIdealWeight()
-        {
-            return Weight == Height - 110;
-        }
-
         public void RideBike()
         {
             _rideCount++;

@@ -63,7 +63,7 @@ namespace Files
                 string line;
                 int height = 0, weight = 0;
 
-                while ((line = reader.ReadLine()) != null)
+                while ((line = reader.ReadLine()!) != null)
                 {
                     line = line.Trim();
 
