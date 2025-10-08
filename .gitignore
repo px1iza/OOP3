@@ -1,0 +1,44 @@
+
+# Але дозволяємо C++ файли
+!*.cpp
+!*.h
+
+# Дозволяємо основний .gitignore
+!.gitignore
+
+# Ігноруємо файли компіляції та конфігурації IDE
+*.o
+*.out
+*.exe
+*.obj
+*.dll
+*.a
+*.lib
+*.so
+*.bin
+*.dSYM/
+.vscode/
+*.vcxproj*
+*.filters
+*.sln
+*.sin
+x64/
+# macOS
+.DS_Store
+
+# Ігнорувати каталоги для IDE
+.idea/
+
+# Файли C# проєкту
+obj/
+# Тимчасові файли
+*.tmp
+
+# Ігноруємо файли проектів C#
+*.csproj
+
+# Ігноруємо налаштування запуску IDE
+.vscode/launch.json
+
+*.pdb
+
