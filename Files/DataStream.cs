@@ -54,6 +54,103 @@ namespace Files
                 }
             }
         }
+        public Human[] ReadFromFile(string fileName)
+        {
+            if (!File.Exists(fileName))
+            {
+                return new Human[0];
+            }
+
+            string[] lines = File.ReadAllLines(fileName);
+            Human[] people = new Human[0];
+
+            for (int i = 0; i < lines.Length; i++)
+            {
+                string line = lines[i].Trim();
+
+                if (string.IsNullOrWhiteSpace(line) || line == "{" || line == "}")
+                {
+                    continue;
+                }
+                string[] header = line.Split(' ');
+                string type = header[0];
+
+                string firstName = "", lastName = "", studentID = "", passportSeries = "";
+                int height = 0, weight = 0, passportNumber = 0;
+
+                i++;
+                while (i < lines.Length && lines[i].Trim() != "}")
+                {
+                    string dataLine = lines[i].Trim();
+
+                    if (dataLine == "{" || string.IsNullOrWhiteSpace(dataLine))
+                    {
+                        i++;
+                        continue;
+                    }
+                    dataLine = dataLine.Replace("\"", "").Replace(",", "");
+                    string[] parts = dataLine.Split(new[] { ':' }, 2);
+
+                    if (parts.Length < 2)
+                    {
+                        i++;
+                        continue;
+                    }
+
+                    string key = parts[0].Trim();
+                    string value = parts[1].Trim();
+
+                    switch (key)
+                    {
+                        case "firstname":
+                            firstName = value;
+                            break;
+                        case "lastname":
+                            lastName = value;
+                            break;
+                        case "height":
+                            int.TryParse(value, out height);
+                            break;
+                        case "weight":
+                            int.TryParse(value, out weight);
+                            break;
+                        case "studentId":
+                            studentID = value;
+                            break;
+                        case "passport":
+                            if (value.Length >= 8)
+                            {
+                                passportSeries = value.Substring(0, 2);
+                                int.TryParse(value.Substring(2), out passportNumber);
+                            }
+                            break;
+                    }
+                    i++;
+                }
+
+                Human newPerson = null;
+                if (type == "Student")
+                {
+                    newPerson = new Student(firstName, lastName, height, weight, studentID, new Passport(passportSeries, passportNumber));
+                }
+                else if (type == "Librarian")
+                {
+                    newPerson = new Librarian(firstName, lastName);
+                }
+                else if (type == "SoftwareDeveloper")
+                {
+                    newPerson = new SoftwareDeveloper(firstName, lastName);
+                }
+
+                if (newPerson != null)
+                {
+                    // Додаємо створену людину в масив
+                    Array.Resize(ref people, people.Length + 1);
+                    people[people.Length - 1] = newPerson;
+                }
+            }
+            return people;
+        }
         public int CountIdealWeightStudents(string fileName)
         {
             string fileContent = File.ReadAllText(fileName);
