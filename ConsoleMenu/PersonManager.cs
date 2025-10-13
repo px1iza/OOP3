@@ -96,6 +96,7 @@ namespace ConsoleMenu
                     Console.WriteLine($"Розробник: {dev.FirstName} {dev.LastName}");
             }
         }
+
         public static void ShowIdealWeight(string fileName)
         {
             Human[] all = DataStream.ReadAllFromFile(fileName);
