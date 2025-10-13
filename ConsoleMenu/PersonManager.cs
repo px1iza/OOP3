@@ -1,7 +1,6 @@
 using System;
 using Entities;
 using Files;
-
 namespace ConsoleMenu
 {
     internal static class PersonManager
@@ -10,10 +9,8 @@ namespace ConsoleMenu
         {
             Console.WriteLine("\n1-Студент, 2-Бібліотекар, 3-Розробник");
             string choice = Console.ReadLine()!;
-
             Console.Write("Ім'я: ");
             string firstName = Console.ReadLine()!;
-
             Console.Write("Прізвище: ");
             string lastName = Console.ReadLine()!;
 
@@ -27,14 +24,12 @@ namespace ConsoleMenu
                     Console.WriteLine("Зріст має бути числом!");
                     return;
                 }
-
                 Console.Write("Вага: ");
                 if (!int.TryParse(Console.ReadLine(), out int weight))
                 {
                     Console.WriteLine("Вага має бути числом!");
                     return;
                 }
-
                 Console.Write("Студентський (KB123456): ");
                 string studentID = Console.ReadLine()!.ToUpper();
 
@@ -61,7 +56,7 @@ namespace ConsoleMenu
             else if (choice == "2")
             {
                 person = new Librarian(firstName, lastName);
-                ((ISkill)person).RideBike(); // бібліотекар катається 1 раз
+                ((ISkill)person).RideBike();
             }
             else if (choice == "3")
             {

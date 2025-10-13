@@ -20,12 +20,10 @@ namespace Entities
             StudentID = studentID;
             Passport = passport;
         }
-
         public void RideBike()
         {
             _rideCount++;
         }
-
         public bool IsValidStudentID()
         {
             return Regex.IsMatch(StudentID, @"^[A-Z]{2}\d{6}$");

@@ -2,8 +2,6 @@
 using System.IO;
 using Entities;
 using System.Text.RegularExpressions;
-
-
 namespace Files
 {
     public class DataStream
@@ -53,13 +51,11 @@ namespace Files
                 writer.WriteLine("}");
             }
         }
-
         public static void AddPerson(string fileName, Human person)
         {
             DataStream stream = new DataStream(new Human[] { person });
             stream.AppendToFile(fileName);
         }
-
         public static Human[] ReadAllFromFile(string fileName)
         {
             if (!File.Exists(fileName))

@@ -13,7 +13,7 @@ namespace ConsoleMenu
             Console.WriteLine("Система управління базою даних");
             while (true)
             {
-                Console.WriteLine("\n=-=-=-=-=-= МЕНЮ =-=-=-=-=-=");
+                Console.WriteLine("\n------------ МЕНЮ ------------");
                 Console.WriteLine("1 | Додати особу");
                 Console.WriteLine("2 | Показати всіх");
                 Console.WriteLine("3 | Студенти з ідеальною вагою");
