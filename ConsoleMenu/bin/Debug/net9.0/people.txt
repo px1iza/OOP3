@@ -1,18 +1,28 @@
-Student lizarabirokh
+Student LizaRabirokh
 {
-"firstname": "liza",
-"lastname": "rabirokh",
-"height": 180,
-"weight": 70,
+"firstname": "Liza",
+"lastname": "Rabirokh",
+"height": 165,
+"weight": 50,
 "studentId": "RD123456",
-"passport": "FD123456"
+"passport": "TD123456"
 }
-Student lizarab
+Librarian НаталіяВолинець
 {
-"firstname": "liza",
-"lastname": "rab",
+"firstname": "Наталія",
+"lastname": "Волинець"
+}
+SoftwareDeveloper ЄвгенВербицький
+{
+"firstname": "Євген",
+"lastname": "Вербицький"
+}
+Student ВіталійСиняк
+{
+"firstname": "Віталій",
+"lastname": "Синяк",
 "height": 180,
 "weight": 70,
-"studentId": "RD123456",
-"passport": "FG123456"
+"studentId": "FD123456",
+"passport": "FD456789"
 }
