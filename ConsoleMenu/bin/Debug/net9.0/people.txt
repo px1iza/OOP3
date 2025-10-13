@@ -1,55 +1,18 @@
-Student РабірохЄлизавета
+Student lizarabirokh
 {
-"firstname": "Рабірох",
-"lastname": "Єлизавета",
+"firstname": "liza",
+"lastname": "rabirokh",
 "height": 180,
 "weight": 70,
-"studentId": "KB123456",
-"passport": "AB987654"
+"studentId": "RD123456",
+"passport": "FD123456"
 }
-Student МаріяКоваль
+Student lizarab
 {
-"firstname": "Марія",
-"lastname": "Коваль",
-"height": 165,
-"weight": 55,
-"studentId": "KB789012",
-"passport": "AC345678"
-}
-Librarian СвітланаМельник
-{
-"firstname": "Світлана",
-"lastname": "Мельник"
-}
-SoftwareDeveloper ЄвгенРоманюк
-{
-"firstname": "Євген",
-"lastname": "Романюк"
-}
-Student ІванСидоренко
-{
-"firstname": "Іван",
-"lastname": "Сидоренко",
-"height": 175,
-"weight": 65,
-"studentId": "KB456789",
-"passport": "AD111222"
-}
-Student НаталіяШевченко
-{
-"firstname": "Наталія",
-"lastname": "Шевченко",
-"height": 160,
-"weight": 50,
-"studentId": "KB333444",
-"passport": "AE222333"
-}
-Student ДмитроГриценко
-{
-"firstname": "Дмитро",
-"lastname": "Гриценко",
-"height": 190,
-"weight": 80,
-"studentId": "KB555666",
-"passport": "AF333444"
+"firstname": "liza",
+"lastname": "rab",
+"height": 180,
+"weight": 70,
+"studentId": "RD123456",
+"passport": "FG123456"
 }

@@ -6,50 +6,41 @@ namespace ConsoleMenu
 {
     internal class Program
     {
+        static string fileName = "people.txt";
+
         static void Main()
         {
-            Human[] people = new Human[]
+            Console.WriteLine("Система управління базою даних");
+            while (true)
             {
-                new Student("Рабірох", "Єлизавета", 180, 70, "KB123456", new Passport("AB", 987654)),
-                new Student("Марія", "Коваль", 165, 55, "KB789012", new Passport("AC", 345678)),
-                new Librarian("Світлана", "Мельник"),
-                new SoftwareDeveloper("Євген", "Романюк"),
-                new Student("Іван", "Сидоренко", 175, 65, "KB456789", new Passport("AD", 111222)),
-                new Student("Наталія", "Шевченко", 160, 50, "KB333444", new Passport("AE", 222333)),
-                new Student("Дмитро", "Гриценко", 190, 80, "KB555666", new Passport("AF", 333444))
-            };
+                Console.WriteLine("\n=-=-=-=-=-= МЕНЮ =-=-=-=-=-=");
+                Console.WriteLine("1 | Додати особу");
+                Console.WriteLine("2 | Показати всіх");
+                Console.WriteLine("3 | Студенти з ідеальною вагою");
+                Console.WriteLine("4 | Очистити файл");
+                Console.WriteLine("\n0 | Вихід");
+                Console.Write("Вибір: ");
 
-            DataStream stream = new DataStream(people);
-            string fileName = "people.txt";
-            stream.WriteToFile(fileName);
-
-            Console.WriteLine($"Дані записано у файл '{fileName}'!");
-            Console.WriteLine($"Кількість студентів з ідеальною вагою: {stream.ReadFromFile(fileName)}");
-            Console.WriteLine("\nСписок усіх осіб:");
-            Display(people);
-
-            Console.WriteLine("\nДемонстрація навички:");
-            foreach (var person in people)
-            {
-                if (person is ISkill skilledPerson)
+                string choice = Console.ReadLine()!;
+                switch (choice)
                 {
-                    skilledPerson.RideBike();
-                    skilledPerson.RideBike();
-                    Console.WriteLine($"{person.FirstName} {person.LastName} покатався {skilledPerson.RideCount} раз(и)");
-                }
-            }
-        }
-        static void Display(Human[] people)
-        {
-            foreach (var person in people)
-            {
-                if (person is Student s)
-                {
-                    Console.WriteLine($"Студент: {s.FirstName} {s.LastName} | {s.Height}см, {s.Weight}кг | ID: {s.StudentID} | Паспорт: {s.Passport.FullPassport}");
-                }
-                else
-                {
-                    Console.WriteLine($"Працівник: {person.GetType().Name} {person.FirstName} {person.LastName}");
+                    case "1":
+                        PersonManager.AddPersonMenu(fileName);
+                        break;
+                    case "2":
+                        PersonManager.ShowAllMenu(fileName);
+                        break;
+                    case "3":
+                        PersonManager.ShowIdealWeight(fileName);
+                        break;
+                    case "4":
+                        PersonManager.ClearFileMenu(fileName);
+                        break;
+                    case "0":
+                        return;
+                    default:
+                        Console.WriteLine("Невірний вибір");
+                        break;
                 }
             }
         }
