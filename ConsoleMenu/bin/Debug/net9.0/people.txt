@@ -16,3 +16,31 @@ Student lizarab
 "studentId": "RD123456",
 "passport": "FG123456"
 }
+Student lizarabirokh
+{
+"firstname": "liza",
+"lastname": "rabirokh",
+"height": 180,
+"weight": 70,
+"studentId": "FD123456",
+"passport": "FG123456"
+}
+Librarian НаталіяВолинець
+{
+"firstname": "Наталія",
+"lastname": "Волинець"
+}
+SoftwareDeveloper ЄвгенВербицький
+{
+"firstname": "Євген",
+"lastname": "Вербицький"
+}
+Student ВіталійСиняк
+{
+"firstname": "Віталій",
+"lastname": "Синяк",
+"height": 190,
+"weight": 80,
+"studentId": "RD145678",
+"passport": "IJ123456"
+}
